@@ -6,9 +6,12 @@
     <link rel="stylesheet" type="text/css" href="css/leaflet.css"/>    
     <link rel="stylesheet" type="text/css" href="css/Leaflet.EditInOSM.css"/>
     <link rel="stylesheet" type="text/css" href="css/L.Control.Locate.css"/>
+    <link rel="stylesheet" type="text/css" href="css/l.geosearch.css" />
     <script type="text/javascript" src="js/leaflet.js"></script>
     <script type="text/javascript" src="js/Leaflet.EditInOSM.js"></script>
     <script type="text/javascript" src="js/L.Control.Locate.js"></script>
+    <script type="text/javascript" src="js/l.control.geosearch.js"></script>
+    <script type="text/javascript" src="js/l.geosearch.provider.openstreetmap.js"></script>
 <style>
   body {
   padding: 0;
@@ -57,6 +60,11 @@
    L.control.locate({
       'follow': true,
       stopFollowingOnDrag: true
+   }).addTo(map);
+
+   //Add geosearch 
+   new L.Control.GeoSearch({
+     provider: new L.GeoSearch.Provider.OpenStreetMap()
    }).addTo(map);
 
  </script>
